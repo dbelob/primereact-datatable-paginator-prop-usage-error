@@ -9,6 +9,8 @@ import { EllipsisH } from '@primeicons/react';
 import { Paginator } from '@primereact/ui/paginator';
 import type { PaginatorPagesInstance } from '@primereact/ui/paginator';
 import type { PaginatorRootChangeEvent } from '@primereact/ui/paginator';
+import { ToggleSwitch } from '@primereact/ui/toggleswitch';
+import { type ToggleSwitchRootChangeEvent } from '@primereact/ui/toggleswitch';
 import './App.css'
 
 export interface Product {
@@ -25,7 +27,11 @@ const products: Product[] = [
     { id: 3, code: '244wgerg2', name: 'Blue T-Shirt', quantity: 25 },
     { id: 4, code: 'h456wer53', name: 'Bracelet', quantity: 73 },
     { id: 5, code: 'av2231fwg', name: 'Brown Purse', quantity: 0 },
-    { id: 6, code: 'bib36pfvm', name: 'Chakra Bracelet', quantity: 5 }
+    { id: 6, code: 'bib36pfvm', name: 'Chakra Bracelet', quantity: 5 },
+    { id: 7, code: 'mbvjkgip5', name: 'Galaxy Earrings', quantity: 23 },
+    { id: 8, code: 'vbb124btr', name: 'Game Controller', quantity: 2 },
+    { id: 9, code: 'cm230f032', name: 'Gaming Set', quantity: 63 },
+    { id: 10, code: 'plb34234v', name: 'Gold Phone Case', quantity: 0 }
 ];
 
 export default function App() {
@@ -34,7 +40,22 @@ export default function App() {
     return (
         <>
             <h1>PrimeReact (DataTable Demo)</h1>
-            <DataTable.Root data={products} showGridlines stripedRows paginator defaultRows={5}>
+            <div className="flex justify-center items-center gap-2 py-3">
+                <label htmlFor="switch">Off</label>
+                <ToggleSwitch.Root
+                    inputId="switch" checked={paginator}
+                    onCheckedChange={(event: ToggleSwitchRootChangeEvent) => setPaginator(event.checked)}
+                >
+                    <ToggleSwitch.Control>
+                        <ToggleSwitch.Handle />
+                    </ToggleSwitch.Control>
+                </ToggleSwitch.Root>
+                <label htmlFor="switch">On</label>
+            </div>
+            <div className="flex justify-center pb-3">
+                paginator: {String(paginator)}
+            </div>
+            <DataTable.Root data={products} showGridlines stripedRows paginator={paginator} defaultRows={5}>
                 <DataTable.TableContainer>
                     <DataTable.Table>
                         <DataTable.THead>

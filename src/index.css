@@ -3,8 +3,19 @@ html {
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .py-3 {
     padding-block: 0.75rem;
+}
+
+.pb-3 {
+    padding-bottom: 0.75rem;
 }
 
 .px-3\.5 {
@@ -18,4 +29,20 @@ html {
 
 .border-surface-200 {
     border-color: #e2e8f0;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.gap-2 {
+    gap: 0.5rem;
 }
