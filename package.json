@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@primeicons/react": "^8.0.2",
-    "@primereact/ui": "^11.2.1",
+    "@primereact/ui": "^11.2.2",
     "@primeuix/themes": "^3.1.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
